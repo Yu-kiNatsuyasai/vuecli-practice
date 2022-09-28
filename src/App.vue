@@ -1,20 +1,30 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <router-link class="nav-link" to="/">Home</router-link>
+          <router-link class="nav-link" to="/about">About</router-link>
+          <router-link class="nav-link" :to="{ name: '新增頁面' }"
+            >NewPage</router-link
+          >
+        </div>
+      </div>
+    </div>
   </nav>
-  <router-view />
-  <button type="button" class="btn btn-primary">Primary</button>
-  <button type="button" class="btn btn-secondary">Secondary</button>
-  <button type="button" class="btn btn-success">Success</button>
-  <button type="button" class="btn btn-danger">Danger</button>
-  <button type="button" class="btn btn-warning">Warning</button>
-  <button type="button" class="btn btn-info">Info</button>
-  <button type="button" class="btn btn-light">Light</button>
-  <button type="button" class="btn btn-dark">Dark</button>
-  <button type="button" class="btn btn-link">Link</button>
+  <div class="container">
+    <router-view />
+  </div>
 </template>
-
-<style lang="scss">
-  @import "bootstrap"
-</style>
