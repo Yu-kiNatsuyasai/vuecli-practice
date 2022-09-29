@@ -17,6 +17,8 @@
         <div class="navbar-nav">
           <router-link class="nav-link" to="/">Home</router-link>
           <router-link class="nav-link" to="/about">About</router-link>
+          <router-link class="nav-link" to="/form">驗證表單</router-link>
+          <router-link class="nav-link" to="/form2">驗證表單２</router-link>
           <router-link class="nav-link" :to="{ name: '新增頁面' }"
             >NewPage</router-link
           >
