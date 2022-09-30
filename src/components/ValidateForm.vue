@@ -1,5 +1,5 @@
 <template>
-  <h2>Vee-validate驗證表單（中文）</h2>
+  <h2>Vee-validate驗證表單</h2>
   <VForm @submit="onSubmit" v-slot="{ errors }">
     {{errors}}
     <div class="mb-3">

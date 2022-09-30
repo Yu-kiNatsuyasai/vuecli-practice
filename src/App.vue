@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Navbar</a>
       <button
@@ -18,7 +18,6 @@
           <router-link class="nav-link" to="/">Home</router-link>
           <router-link class="nav-link" to="/about">About</router-link>
           <router-link class="nav-link" to="/form">驗證表單</router-link>
-          <router-link class="nav-link" to="/form2">驗證表單２</router-link>
           <router-link class="nav-link" :to="{ name: '新增頁面' }"
             >NewPage</router-link
           >
@@ -26,7 +25,13 @@
       </div>
     </div>
   </nav>
-  <div class="container">
+  <div class="container" style="height:300vh">
     <router-view />
   </div>
 </template>
+
+<style lang="scss">
+body {
+  padding-top: 80px
+}
+</style>

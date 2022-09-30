@@ -21,11 +21,6 @@ const routes = [
     component: () => import('../components/ValidateForm.vue')
   },
   {
-    path: '/form2',
-    name: 'form2',
-    component: () => import('../components/ValidateForm2.vue')
-  },
-  {
     path: '/newpage',
     name: '新增頁面',
     component: () => import('../views/NewView.vue'),
@@ -57,13 +52,48 @@ const routes = [
             }
           }
         ]
+      },
+      {
+        path: 'dynamicrouter/:id',
+        component: () => import('../views/DynamicRouter.vue')
+      },
+      {
+        path: 'dynamicrouterbyprops/:id',
+        component: () => import('../views/DynamicRouterByProps.vue'),
+        props: (route) => {
+          return {
+            id: route.params.id
+          }
+        }
+      },
+      {
+        path: 'routernavigation',
+        component: () => import('../views/RouterNavigation.vue')
       }
     ]
+  },
+  {
+    // 404頁面
+    path: '/:pathMatch(.*)*',
+    component: () => import('../views/NotFound.vue')
   }
+  // {
+  //   // 重新導向
+  //   path: '/:pathMatch(.*)*',
+  //   redirect: {
+  //     name: 'home'
+  //   }
+  // }
 ]
 
 const router = createRouter({
   history: createWebHashHistory(),
+  linkActiveClass: 'active',
+  scrollBehavior () {
+    return {
+      top: 0 // 切換頁面時自動滾動到最上方
+    }
+  },
   routes
 })
 
