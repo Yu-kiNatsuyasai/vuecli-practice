@@ -30,6 +30,7 @@ export default {
     }
   },
   created () {
+    // console.log('DynamicRouter' + this.$route.params.id + 'Created')
     this.getData()
   }
 }

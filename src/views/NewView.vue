@@ -17,9 +17,9 @@
         <router-link to="/newpage/routernavigation" class="list-group-item list-group-item-action">
           路由導覽
         </router-link>
-        <router-link :to="`/newpage/dynamicrouter/${userId}`" class="list-group-item list-group-item-action">
+        <a :class="isLinkActive()" @click="toDynamicUser" class="list-group-item list-group-item-action">
           前往user頁面(params)
-        </router-link>
+        </a>
         <router-link :to="`/newpage/dynamicrouterbyprops/${userId}`" class="list-group-item list-group-item-action">
           前往user頁面(props)
         </router-link>
@@ -30,7 +30,7 @@
       </div>
     </div>
     <div class="col-8">
-      <router-view></router-view>
+      <router-view v-if="isRouterAlive"></router-view>
     </div>
   </div>
 </template>
@@ -40,7 +40,8 @@ import axios from 'axios'
 export default {
   data () {
     return {
-      userId: '0d1f13ccc49dcea9'
+      userId: '0d1f13ccc49dcea9',
+      isRouterAlive: true
     }
   },
   methods: {
@@ -50,6 +51,21 @@ export default {
           // console.log(res)
           this.userId = res.data.info.seed
         })
+    },
+    reload () {
+      this.isRouterAlive = false
+      this.$nextTick(() => {
+        this.isRouterAlive = true
+      })
+    },
+    toDynamicUser () {
+      // console.log(this.userId)
+      this.$router.push(`/newpage/dynamicrouter/${this.userId}`).then(() => {
+        this.reload()
+      })
+    },
+    isLinkActive () {
+      return this.$route.fullPath === `/newpage/dynamicrouter/${this.userId}` ? 'active' : ''
     }
   }
 }
