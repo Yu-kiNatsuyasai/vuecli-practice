@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkvuecli_practice"]=self["webpackChunkvuecli_practice"]||[]).push([[344],{6344:function(c,e,n){n.r(e),n.d(e,{default:function(){return f}});var r=n(3396);const t=(0,r._)("h2",null,"命名視圖範例",-1),u={class:"row"},l={class:"col-6"},i={class:"col-6"};function s(c,e){const n=(0,r.up)("router-view");return(0,r.wg)(),(0,r.iD)(r.HY,null,[t,(0,r._)("div",u,[(0,r._)("div",l,[(0,r.Wm)(n,{name:"left"})]),(0,r._)("div",i,[(0,r.Wm)(n,{name:"right"})])])],64)}var a=n(89);const o={},v=(0,a.Z)(o,[["render",s]]);var f=v}}]);
+//# sourceMappingURL=344.49ea8960.js.map
